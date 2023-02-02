@@ -9,7 +9,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1.BinarySearch \n 2.Exit");
+                Console.WriteLine("1.BinarySearch \n 2.InsertionSort \n 3.Exit");
                 Console.Write("Select any one from the above option: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -20,6 +20,11 @@
                         search.BinarySearchWord("problem");
                         break;
                     case 2:
+                        InsertionSort sort = new InsertionSort();
+                        sort.ReadTextFiles(binaryTextPath);
+                        sort.Sort();
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }
