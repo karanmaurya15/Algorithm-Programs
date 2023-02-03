@@ -13,7 +13,7 @@ namespace Algorithm_Programs
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine(" 1.BinarySearch \n 2.InsertionSort \n 3.BubbleSort \n 4.MergeSort \n 5.Anagram Detection \n 6.Exit");
+                Console.WriteLine(" 1.BinarySearch \n 2.InsertionSort \n 3.BubbleSort \n 4.MergeSort \n 5.Anagram Detection \n 6.PrimeNumber \n 7.Exit");
                 Console.Write("\nSelect any one from the above option: ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -47,6 +47,10 @@ namespace Algorithm_Programs
                         check.CheckAnagram("heart", "earth");
                         break;
                     case 6:
+                        PrimeNumbers primeNumbers = new PrimeNumbers();
+                        primeNumbers.PrimeNumber();
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
