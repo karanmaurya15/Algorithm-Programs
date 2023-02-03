@@ -8,6 +8,9 @@ namespace Algorithm_Programs
 {
     internal class PrimeNumbers
     {
+        public List<int> primeNumbers = new List<int>();
+        public List<int> primePalindrome = new List<int>();
+        public List<int> primeAnagram = new List<int>();
         public void PrimeNumber()
         {
             Console.Write("\nEnter the stating number : ");
@@ -15,7 +18,8 @@ namespace Algorithm_Programs
             Console.Write("Enter the last number : ");
             int lastNum = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = startingNum; i <= lastNum; i++)
+            Console.Write("\nPime Numbers between given range are:");
+            for (int i = startingNum; i <= lastNum; i++)
             {
                 int count = 0;
                 for(int j = 2; j <= i/2; j++)
@@ -29,9 +33,39 @@ namespace Algorithm_Programs
                 if(count == 0 && i != 1)
                 {
                     Console.Write(i + " ");
+                    primeNumbers.Add(i);
                 }
             }
-            Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        }
+        public void CheckAnagramPalindrome()
+        {
+            foreach (var data in primeNumbers)
+            {
+                if (data > 9)
+                {
+                    int sum = 0;
+                    int remainder;
+                    int temp = data;
+                    while (temp > 0)
+                    {
+                        remainder = temp % 10;
+                        sum = sum * 10 + remainder;
+                        temp /= 10;
+                    }
+                    if (sum == data)
+                        primePalindrome.Add(data);
+                }
+            }
+            Console.WriteLine("\n\nPrime Numbers that are Palindrome between given range are: ");
+            Display(primePalindrome);
+        }
+        public void Display(List<int> list)
+        {
+            foreach (var data in list)
+            {
+                Console.Write(data + " ");
+            }
+            Console.WriteLine("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }
 }

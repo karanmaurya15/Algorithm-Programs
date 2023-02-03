@@ -49,6 +49,7 @@ namespace Algorithm_Programs
                     case 6:
                         PrimeNumbers primeNumbers = new PrimeNumbers();
                         primeNumbers.PrimeNumber();
+                        primeNumbers.CheckAnagramPalindrome();
                         break;
                     case 7:
                         flag = false;
